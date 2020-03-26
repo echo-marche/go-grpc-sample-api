@@ -3,7 +3,7 @@ package infrastructure
 import (
 	"log"
 
-	"github.com/echo-marche/niche-farm-bff/config"
+	"github.com/echo-marche/nicheye-bff/config"
 	"google.golang.org/grpc"
 )
 

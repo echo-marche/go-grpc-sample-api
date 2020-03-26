@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/echo-marche/niche-farm-bff/infrastructure"
+	"github.com/echo-marche/nicheye-bff/infrastructure"
 )
 
 func main() {

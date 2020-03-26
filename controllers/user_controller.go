@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	presencePb "github.com/echo-marche/niche-farm-bff/pb/presence"
+	presencePb "github.com/echo-marche/nicheye-bff/pb/presence"
 )
 
 type UserController struct {

@@ -1,4 +1,4 @@
-module github.com/echo-marche/niche-farm-bff
+module github.com/echo-marche/nicheye-bff
 
 go 1.13
 

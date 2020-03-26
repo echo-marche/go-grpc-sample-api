@@ -3,7 +3,7 @@ settings:
     force: false
     interval: 0s
 schema:
-- name: niche-farm-bff
+- name: nicheye-bff
   path: /go/app
   commands:
     install:
