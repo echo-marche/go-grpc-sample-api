@@ -3,7 +3,7 @@ settings:
     force: false
     interval: 0s
 schema:
-- name: nicheye-bff
+- name: dev-compass-bff
   path: /go/app
   commands:
     install:

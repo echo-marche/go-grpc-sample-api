@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	articlePb "github.com/echo-marche/nicheye-bff/pb/article"
+	articlePb "github.com/echo-marche/dev-compass-bff/pb/article"
 )
 
 type ArticleController struct {

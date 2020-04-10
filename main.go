@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/echo-marche/nicheye-bff/infrastructure"
+	"github.com/echo-marche/dev-compass-bff/infrastructure"
 )
 
 func main() {

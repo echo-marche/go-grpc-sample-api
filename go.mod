@@ -1,4 +1,4 @@
-module github.com/echo-marche/nicheye-bff
+module github.com/echo-marche/dev-compass-bff
 
 go 1.13
 
