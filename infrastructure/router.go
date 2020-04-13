@@ -1,10 +1,10 @@
 package infrastructure
 
 import (
-	"github.com/echo-marche/dev-compass-bff/config"
-	"github.com/echo-marche/dev-compass-bff/controllers"
-	articlePb "github.com/echo-marche/dev-compass-bff/pb/article"
-	presencePb "github.com/echo-marche/dev-compass-bff/pb/presence"
+	"github.com/echo-marche/hack-tech-tips-api/config"
+	"github.com/echo-marche/hack-tech-tips-api/controllers"
+	articlePb "github.com/echo-marche/hack-tech-tips-api/pb/article"
+	presencePb "github.com/echo-marche/hack-tech-tips-api/pb/presence"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"google.golang.org/grpc"

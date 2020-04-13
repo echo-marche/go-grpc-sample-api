@@ -3,7 +3,7 @@ settings:
     force: false
     interval: 0s
 schema:
-- name: dev-compass-bff
+- name: hack-tech-tips-api
   path: /go/app
   commands:
     install:

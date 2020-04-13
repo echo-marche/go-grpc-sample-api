@@ -3,7 +3,7 @@ package infrastructure
 import (
 	"log"
 
-	"github.com/echo-marche/dev-compass-bff/config"
+	"github.com/echo-marche/hack-tech-tips-api/config"
 	"google.golang.org/grpc"
 )
 

@@ -1,4 +1,4 @@
-module github.com/echo-marche/dev-compass-bff
+module github.com/echo-marche/hack-tech-tips-api
 
 go 1.13
 

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/echo-marche/dev-compass-bff/infrastructure"
+	"github.com/echo-marche/hack-tech-tips-api/infrastructure"
 )
 
 func main() {
