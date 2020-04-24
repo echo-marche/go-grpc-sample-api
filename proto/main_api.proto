@@ -1,0 +1,25 @@
+syntax = "proto3";
+package main_api;
+option go_package = ".;main_api";
+
+service Presence {
+  rpc GetSampleList (SampleListRequest) returns (SampleListResponse) {}
+  rpc GetSample (SampleRequest) returns (SampleResponse) {}
+}
+
+message SampleListRequest {
+  string system_code = 1;
+}
+
+message SampleRequest {
+  string system_code = 1;
+}
+
+message SampleListResponse {
+  repeated SampleResponse samples = 1;
+}
+
+message SampleResponse {
+  string name = 1;
+  string email = 2;
+}
