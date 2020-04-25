@@ -3,7 +3,7 @@ settings:
     force: false
     interval: 0s
 schema:
-- name: hack-tech-tips-api
+- name: api-server
   path: /go/app
   commands:
     install:
