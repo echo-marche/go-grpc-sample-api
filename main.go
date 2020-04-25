@@ -8,6 +8,8 @@ import (
 	"github.com/echo-marche/hack-tech-tips-api/infrastructure"
 	pb "github.com/echo-marche/hack-tech-tips-api/proto/pb/main_api"
 	"github.com/echo-marche/hack-tech-tips-api/servers"
+	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
+	grpc_validator "github.com/grpc-ecosystem/go-grpc-middleware/validator"
 	"google.golang.org/grpc"
 )
 
@@ -21,7 +23,14 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	server := grpc.NewServer()
+	server := grpc.NewServer(
+		grpc.StreamInterceptor(grpc_middleware.ChainStreamServer(
+			grpc_validator.StreamServerInterceptor(),
+		)),
+		grpc.UnaryInterceptor(grpc_middleware.ChainUnaryServer(
+			grpc_validator.UnaryServerInterceptor(),
+		)),
+	)
 	sampleServer := &servers.SampleServer{}
 	pb.RegisterMainApiServer(server, sampleServer)
 	if err := server.Serve(listenPort); err != nil {
