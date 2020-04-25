@@ -18,11 +18,11 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-var _regex_SampleRequest_SystemCode = regexp.MustCompile(`[ABZ]`)
+var _regex_SampleRequest_SystemCode = regexp.MustCompile(`^([ABZ])?$`)
 
 func (this *SampleRequest) Validate() error {
 	if !_regex_SampleRequest_SystemCode.MatchString(this.SystemCode) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SystemCode", fmt.Errorf(`value '%v' must be a string conforming to regex "[ABZ]"`, this.SystemCode))
+		return github_com_mwitkow_go_proto_validators.FieldError("SystemCode", fmt.Errorf(`value '%v' must be a string conforming to regex "^([ABZ])?$"`, this.SystemCode))
 	}
 	return nil
 }

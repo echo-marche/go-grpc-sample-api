@@ -13,7 +13,7 @@ service MainApi {
 }
 
 message SampleRequest {
-  string system_code = 1 [(validator.field) = {regex: "[ABZ]"}];
+  string system_code = 1 [(validator.field) = {regex: "^([ABZ])?$"}];
 }
 
 message SampleResponse {
