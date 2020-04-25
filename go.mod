@@ -6,6 +6,7 @@ require (
 	github.com/go-sql-driver/mysql v1.5.0 // indirect
 	github.com/golang/protobuf v1.4.0
 	github.com/grpc-ecosystem/go-grpc-middleware v1.2.0
+	github.com/grpc-ecosystem/grpc-gateway v1.14.4 // indirect
 	github.com/jinzhu/gorm v1.9.12
 	github.com/mwitkow/go-proto-validators v0.3.0
 	golang.org/x/crypto v0.0.0-20200423211502-4bdfaf469ed5 // indirect
@@ -13,7 +14,6 @@ require (
 	google.golang.org/genproto v0.0.0-20200424135956-bca184e23272
 	google.golang.org/grpc v1.29.1
 	google.golang.org/protobuf v1.21.0
-	gopkg.in/yaml.v2 v2.2.3 // indirect
 )
 
 // for realize
