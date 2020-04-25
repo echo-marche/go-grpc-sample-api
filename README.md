@@ -1,5 +1,3 @@
-# hack-tech-tips backend for frontend
-- hack-tech-tips-frontの唯一のバックエンド
-- DBには接続しない
+# hack-tech-tips backend main API
+- hack-tech-tips-gatewayからリバプロで接続
 - gRPCで各種APIに接続する
-- front1画面に対して1エンドポイント

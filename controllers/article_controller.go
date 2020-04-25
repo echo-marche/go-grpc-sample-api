@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	articlePb "github.com/echo-marche/hack-tech-tips-api/pb/article"
+	articlePb "github.com/echo-marche/hack-tech-tips-api/proto/pb/article"
 )
 
 type ArticleController struct {

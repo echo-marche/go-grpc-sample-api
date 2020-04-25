@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	presencePb "github.com/echo-marche/hack-tech-tips-api/pb/presence"
+	presencePb "github.com/echo-marche/hack-tech-tips-api/proto/pb/presence"
 )
 
 type UserController struct {
