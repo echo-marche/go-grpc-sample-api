@@ -1,22 +1,18 @@
 syntax = "proto3";
 package main_api;
 option go_package = ".;main_api";
+import "google/api/annotations.proto";
 
-service Presence {
-  rpc GetSampleList (SampleListRequest) returns (SampleListResponse) {}
-  rpc GetSample (SampleRequest) returns (SampleResponse) {}
-}
-
-message SampleListRequest {
-  string system_code = 1;
+service MainApi {
+  rpc GetSample (SampleRequest) returns (SampleResponse) {
+    option (google.api.http) = {
+      get: "/sample"
+    };
+  }
 }
 
 message SampleRequest {
   string system_code = 1;
-}
-
-message SampleListResponse {
-  repeated SampleResponse samples = 1;
 }
 
 message SampleResponse {
