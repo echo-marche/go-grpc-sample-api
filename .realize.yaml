@@ -3,7 +3,7 @@ settings:
     force: false
     interval: 0s
 schema:
-- name: api-server
+- name: main-api
   path: /go/app
   commands:
     install:
