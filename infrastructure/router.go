@@ -1,6 +1,9 @@
 package infrastructure
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/echo-marche/hack-tech-tips-api/config"
 	"github.com/echo-marche/hack-tech-tips-api/controllers"
 	articlePb "github.com/echo-marche/hack-tech-tips-api/proto/pb/article"
@@ -35,6 +38,12 @@ func (router *Router) InitRouter() {
 	// Middleware
 	router.e.Use(middleware.Logger())
 	router.e.Use(middleware.Recover())
+	if config.IsDev() {
+		router.
+			e.Use(middleware.BodyDump(func(c echo.Context, reqBody, resBody []byte) {
+			fmt.Fprintf(os.Stderr, "Request: %v\n", string(reqBody))
+		}))
+	}
 
 	// ユーザー関連
 	router.e.GET("/users", func(c echo.Context) error { return userController.Index(c) })

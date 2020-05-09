@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 
 	presencePb "github.com/echo-marche/hack-tech-tips-api/proto/pb/presence"
@@ -25,8 +24,6 @@ func (controller *UserController) Index(c Context) (err error) {
 
 // ユーザー仮登録
 func (controller *UserController) TempRegistration(c Context) (err error) {
-	fmt.Println(c)
-
 	request := &presencePb.UserRegistrationRequest{
 		Email:    c.FormValue("email"),
 		Password: c.FormValue("password"),
@@ -34,7 +31,6 @@ func (controller *UserController) TempRegistration(c Context) (err error) {
 	// validation
 	err = validations.ValidateUserRegistrationRequest(request)
 	if err != nil {
-		fmt.Println(err)
 		c.JSON(http.StatusInternalServerError, NewError(err))
 		return
 	}
