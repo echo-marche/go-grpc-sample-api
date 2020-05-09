@@ -38,6 +38,7 @@ func (router *Router) InitRouter() {
 
 	// ユーザー関連
 	router.e.GET("/users", func(c echo.Context) error { return userController.Index(c) })
+	router.e.POST("/user/temp_registration", func(c echo.Context) error { return userController.TempRegistration(c) })
 	// 記事関連
 	router.e.GET("/articles", func(c echo.Context) error { return articleController.Index(c) })
 	// e.GET("/article/:id", func(c echo.Context) error { return articleController.Show(c) })
