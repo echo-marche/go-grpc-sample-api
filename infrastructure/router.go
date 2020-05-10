@@ -8,6 +8,7 @@ import (
 	"github.com/echo-marche/hack-tech-tips-api/controllers"
 	articlePb "github.com/echo-marche/hack-tech-tips-api/proto/pb/article"
 	presencePb "github.com/echo-marche/hack-tech-tips-api/proto/pb/presence"
+	sendmailPb "github.com/echo-marche/hack-tech-tips-api/proto/pb/sendmail"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"google.golang.org/grpc"
@@ -17,6 +18,7 @@ type Router struct {
 	e               *echo.Echo
 	PresenceApiConn *grpc.ClientConn
 	ArticleApiConn  *grpc.ClientConn
+	SendmailApiConn *grpc.ClientConn
 }
 
 func (router *Router) InitRouter() {
@@ -26,8 +28,12 @@ func (router *Router) InitRouter() {
 	// Generate PB Client
 	presenceClient := presencePb.NewPresenceClient(router.PresenceApiConn)
 	articleClient := articlePb.NewArticleClient(router.ArticleApiConn)
+	sendmailClient := sendmailPb.NewSendmailClient(router.SendmailApiConn)
 
 	// Controller settings
+	sampleController := controllers.SampleController{
+		SendmailClient: sendmailClient,
+	}
 	userController := controllers.UserController{
 		PresenceClient: presenceClient,
 	}
@@ -45,6 +51,8 @@ func (router *Router) InitRouter() {
 		}))
 	}
 
+	// sample
+	router.e.GET("/sample/sendmail", func(c echo.Context) error { return sampleController.Index(c) })
 	// ユーザー関連
 	router.e.GET("/users", func(c echo.Context) error { return userController.Index(c) })
 	router.e.POST("/user/temp_registration", func(c echo.Context) error { return userController.TempRegistration(c) })
