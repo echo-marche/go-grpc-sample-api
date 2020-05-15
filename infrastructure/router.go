@@ -52,7 +52,8 @@ func (router *Router) InitRouter() {
 	}
 
 	// sample
-	router.e.GET("/sample/sendmail", func(c echo.Context) error { return sampleController.Index(c) })
+	router.e.GET("/sample/sendmail", func(c echo.Context) error { return sampleController.SendMail(c) })
+	router.e.GET("/sample", func(c echo.Context) error { return sampleController.Index(c) })
 	// ユーザー関連
 	router.e.GET("/users", func(c echo.Context) error { return userController.Index(c) })
 	router.e.POST("/user/temp_registration", func(c echo.Context) error { return userController.TempRegistration(c) })
