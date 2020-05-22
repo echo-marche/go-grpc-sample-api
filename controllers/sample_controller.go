@@ -12,10 +12,6 @@ type SampleController struct {
 	SendmailClient sendmailPb.SendmailClient
 }
 
-func (controller *SampleController) Index(c Context) (err error) {
-	return c.JSON(http.StatusOK, "sample OK!!")
-}
-
 func (controller *SampleController) SendMail(c Context) (err error) {
 	request := &sendmailPb.EmailRequest{
 		FromUserName: "テストユーザー",

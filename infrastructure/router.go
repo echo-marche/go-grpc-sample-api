@@ -40,6 +40,9 @@ func (router *Router) InitRouter() {
 	articleController := controllers.ArticleController{
 		ArticleClient: articleClient,
 	}
+	healthzController := controllers.HealthzController{
+		PresenceClient: presenceClient,
+	}
 
 	// Middleware
 	router.e.Use(middleware.Logger())
@@ -53,7 +56,8 @@ func (router *Router) InitRouter() {
 
 	// sample
 	router.e.GET("/sample/sendmail", func(c echo.Context) error { return sampleController.SendMail(c) })
-	router.e.GET("/sample", func(c echo.Context) error { return sampleController.Index(c) })
+	// helthz
+	router.e.GET("/healthz", func(c echo.Context) error { return healthzController.Index(c) })
 	// ユーザー関連
 	router.e.GET("/users", func(c echo.Context) error { return userController.Index(c) })
 	router.e.POST("/user/temp_registration", func(c echo.Context) error { return userController.TempRegistration(c) })
