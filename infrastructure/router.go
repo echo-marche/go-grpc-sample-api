@@ -70,5 +70,5 @@ func (router *Router) InitRouter() {
 }
 
 func (router *Router) Start() {
-	router.e.Logger.Fatal(router.e.Start(":" + config.GetEnv("API_PORT")))
+	router.e.Logger.Fatal(router.e.Start(":" + config.GetEnv("MAIN_API_SERVICE_PORT")))
 }
