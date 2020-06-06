@@ -1,2 +1,3 @@
-# hack-tech-tips backend main API
-- gRPCで各種APIに接続する
+# Go言語サンプルAPI（echo）
+- RESTで受付
+- gRPCで各種共通APIに接続する
